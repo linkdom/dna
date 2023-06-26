@@ -9,7 +9,7 @@ be beneficial.
 
 ##### Log = Base 2 log
 
-Big O is a way to categorize the algorithms time or memory requirements based on input.
+Big O is a way to categorize the algorithms time or memory requirements based on input.  
 It is not meant to be an exact measurement. Why? Because it takes time to create memory etc.
 It is meant to generalize the growth of an algorithm.
 
