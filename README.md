@@ -1,6 +1,7 @@
-# Summary
-# 
-This is the summary of what I have learned about Data Types and Algorithms from the course of **_ThePrimeagen_**
+# This is my effort to get better at memorizing data structures and algorithms 
+In here I keep notes, this implementation is going to be in Rust since I have done it
+in typescript once and i figured that doing it in a different programming language will
+be beneficial.
 
 ## Algorithms
 
