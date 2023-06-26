@@ -1,3 +1,12 @@
+mod queue;
+
 fn main() {
-    println!("Hello, world!");
+    let mut q = queue::Queue::new();
+    
+    q.enqueue("Hello");
+    q.enqueue("World");
+    
+    println!("{:?}", q.dequeue()); // Prints Some("Hello")
+    println!("{:?}", q.dequeue()); // Prints Some("World")
+    println!("{:?}", q.dequeue()); // Prints None
 }
