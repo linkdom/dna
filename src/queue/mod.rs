@@ -1,13 +1,11 @@
-// src/queue/mod.rs
-
 pub struct Queue<T> {
-    items: Vec<T>,
+    items: Vec<T>
 }
 
 impl<T> Queue<T> {
     pub fn new() -> Self {
         Queue {
-            items: Vec::new(),
+            items: Vec::new()
         }
     }
 
@@ -23,11 +21,4 @@ impl<T> Queue<T> {
         }
     }
 
-    pub fn peek(&self) -> Option<&T> {
-        self.items.first()
-    }
-
-    pub fn is_empty(&self) -> bool {
-        self.items.is_empty()
-    }
 }
