@@ -1,12 +1,16 @@
-mod queue;
+mod stack;
+use stack::Stack;
 
 fn main() {
-    let mut q = queue::Queue::new();
+    let mut stack = Stack::new();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
     
-    q.enqueue("Hello");
-    q.enqueue("World");
+    println!("Top element is: {:?}", stack.peek());
+    println!("Stack size is: {}", stack.size());
     
-    println!("{:?}", q.dequeue()); // Prints Some("Hello")
-    println!("{:?}", q.dequeue()); // Prints Some("World")
-    println!("{:?}", q.dequeue()); // Prints None
+    println!("Popped element: {:?}", stack.pop());
+    println!("Top element is: {:?}", stack.peek());
+    println!("Stack size is: {}", stack.size());
 }
