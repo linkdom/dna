@@ -1,20 +1,22 @@
+use std::fmt::Debug;
+
 pub struct Node<T> {
     value: T,
-    next: Node<T>
+    next: Option<Box<Node<T>>>,
 }
 
 pub struct LinkedList<T> {
     head: Option<Box<Node<T>>>,
-    tail: Option<*mut Node<T>>
+    tail: Option<*mut Node<T>>,
 }
 
-impl<T> LinkedList<T> {
+impl<T: Debug> LinkedList<T> {
 
     pub fn new() -> Self {
-        LinkedList {value: None, next: None}
+        LinkedList {head: None, tail: None}
     }
 
-    pub fn append(*mut self, value: T) {
+    pub fn append(&mut self, value: T) {
         let new_node = Box::new(Node {value, next: None});
 
         let raw_node = Box::into_raw(new_node);
@@ -42,6 +44,22 @@ impl<T> LinkedList<T> {
 
             old_head.value
         })
+    }
+
+    pub fn peek_front(&self) -> Option<&T> {
+        self.head.as_ref().map(|node| &node.value)
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.head.is_none()
+    }
+
+    pub fn traverse(&self) {
+        let mut current = &self.head;
+        while let Some(node) = current {
+            println!("{:?}", node.value);
+            current = &node.next;
+        }
     }
 
 }
